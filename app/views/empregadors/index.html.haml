@@ -1,0 +1,25 @@
+%h1 Listing empregadors
+
+%table
+  %thead
+    %tr
+      %th Nome
+      %th Endereco
+      %th Numero
+      %th
+      %th
+      %th
+
+  %tbody
+    - @empregadors.each do |empregador|
+      %tr
+        %td= empregador.nome
+        %td= empregador.endereco
+        %td= empregador.numero
+        %td= link_to 'Show', empregador
+        %td= link_to 'Edit', edit_empregador_path(empregador)
+        %td= link_to 'Excluir', empregador, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Empregador', new_empregador_path
