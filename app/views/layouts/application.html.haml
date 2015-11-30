@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{ :charset => "utf-8" }
+
+    %meta{:name=>"description", :content=>"Domestica description"}
+    %meta{:name=>"keywords", :content=>"Domestica keywords"}
+    %meta{:name=>"author", :content=>"Luiz Gustavo"}
+    %meta{:property=>"og:type", :content=>"website"}
+
+
+    %title= content_for?(:title) ? yield(:title) : 'Domestica do Lar'
+    %meta{:name => "title", :content => "#{content_for?(:title) ? yield(:title) : 'Domestica do Lar'}"}
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+
+    = csrf_meta_tags
+  %body
+    %header
+      = render 'layouts/header'
+    %main{:role => "main"}
+
+      = yield
+    %footer
+      = render 'layouts/footer'
