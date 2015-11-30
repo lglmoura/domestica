@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @empregado.nome
+%p
+  %b Endereço:
+  = @empregado.endereco
+%p
+  %b Cidade:
+  = @empregado.cidade
+%p
+  %b Empregador:
+  = @empregado.empregador.nome
+
+= link_to 'Edit', edit_empregado_path(@empregado)
+\|
+= link_to 'Back', empregados_path
