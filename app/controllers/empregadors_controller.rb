@@ -1,4 +1,5 @@
 class EmpregadorsController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   before_action :set_empregador, only: [:show, :edit, :update, :destroy]
 
   # GET /empregadors
